@@ -1,0 +1,55 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0;
+}
+
+.flex-container{
+    display: flex;
+
+
+    flex-flow: column;
+    height: 100px;
+
+   /* align-items: center;
+  justify-content: space-around;*/
+}
+
+.item {
+    align-self: flex-end;
+  }
+
+.box{
+    min-width:100px;
+    flex-grow: 100%;
+
+}
+.one{
+    background: #51D400 ;
+    flex-grow: 1;
+    order:1;
+}
+
+.two{
+    background: #FFD62A;
+    flex-grow: 2;
+    order:3;
+
+}
+
+.three{
+    background: #B02AFF ;
+    flex-grow: 1;
+    order:2;
+}
+
+

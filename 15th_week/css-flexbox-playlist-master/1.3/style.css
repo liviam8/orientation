@@ -1,0 +1,49 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0;
+}
+
+.flex-container{
+    display: flex;
+   /* align-items: center;
+  justify-content: space-around;*/
+}
+
+.item {
+    align-self: flex-end;
+  }
+
+.box{
+    height: 100px;
+    min-width: 100px;
+
+}
+.one{
+    background: #51D400 ;
+    flex-grow: 1;
+}
+
+.two{
+    background: #FFD62A;
+    flex-grow: 2;
+
+}
+
+.three{
+    background: #B02AFF ;
+    flex-grow: 1;
+}
+
+.one{order:3;}
+.two{order:2;}
+.three{order:1;}
