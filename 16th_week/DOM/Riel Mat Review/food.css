@@ -1,0 +1,133 @@
+body {
+  /* background-color: #222; */
+  background-image: url('https://html.sammy-codes.com/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  height: 60px;
+  font-size: 18px;
+}
+
+header .icon {
+  fill: white;
+}
+
+header svg {
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+nav,
+#functions {
+  line-height: 60px;
+}
+
+main {
+  margin: auto;
+  width: 1120px;
+}
+
+main section {
+  display: flex;
+  justify-content: space-between;
+}
+
+main section article {
+  width: 60%;
+}
+
+main section aside {
+  width: 30%;
+}
+
+aside {
+  background-color: tomato;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: #0fb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8df;
+}
+
+a svg {
+  fill: #8df;
+}
+
+img {
+  width: 100%;
+}
+
+#logo svg {
+  height: 40px;
+}
+
+.title-box {
+  border-bottom: 1px dotted lightgray;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.inline * {
+  display: inline;
+}
+
+.btn {
+  background-color: #333;
+  color: #8df;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #135;
+}
+
+header svg {
+  height: 10px;
+}
+
+.highlighted-box {
+  border: 3px solid #087;
+  padding: 20px;
+}
+
+.profile-icon {
+  border-radius: 50%;
+}
+
+.selected {
+  background-color:chocolate;
+}
+
+.highlighted {
+  background-color: aqua;
+}
