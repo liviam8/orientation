@@ -1,8 +1,14 @@
-window.addEventListener("DOMContentLoaded", () => {
-    // this will run, when every content on the page is loaded
-    //function for arrows
-    //function for thumbanail render
-    //...  
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  //res.send('Hello World!');
+  res.sendFile(__dirname + '/index.html');
 })
 
-// window.onload does the same 
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+})

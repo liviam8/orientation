@@ -8,7 +8,7 @@ const images = [
     {
         tilte: "Kitten",
         description: "asjjabfnlab",
-        file: "https://placekitten.com/1001/701"
+        file: "1.jpg"
 
     }
 ]
