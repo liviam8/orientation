@@ -66,40 +66,26 @@ app.get('/api/books', (req, res) => {
 });
 
 
-app.post('/api/books', (req, res) => {
+app.get('/api/books/:id', (req, res) => {
     const query1 = `
-    SELECT book_name FROM bookstore.book_mast
+    SELECT book_name FROM book_mast
     WHERE book_id= ?;
     
- 
     `;
-    const params1 = [
-        req.body.book_name,
-        
-    ];
+    const params = [parseInt(req.params.book_id)];
+    
 
-    pool.query(query1, params1, (err1, result1) => {
+    pool.query(query1, params, (err1, rows) => {
         if (err1) {
             console.error(err1);
             res.status(500).send({ message: err1.sqlMessage });
             return;
         }
-
-        // const query2 = `
-        //     INSERT INTO participants_classes (participant_id, class_id)
-        //     VALUES (?, ?)
-        // `;
-        // const params2 = [result1.insertId, req.body.class_id];
-
-        // pool.query(query2, params2, (err2) => {
-        //     if (err2) {
-        //         console.error(err2);
-        //         res.status(500).send({ message: err2.sqlMessage });
-        //         return;
-        //     }
-
-        //     res.status(201).send({ message: 'Success' });
-        // // });
+        if (rows.length === 0) {
+            res.status(404).send({ message: 'Not found' });
+            return;
+        }
+        res.send({ books: book_name });
     });
 });
 
