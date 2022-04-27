@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login Form</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<form action="/vegtelenbe" method="POST">
+			<legend>Account Loging</legend>
+			<label for="username">Username</label>
+			<input
+				type="text"
+				id="username"
+				name="username"
+				autofocus
+				required
+				pattern="[A-z1-9]{8,}"
+			/>
+			<label for="password">Password</label>
+			<div>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					required 
+					pattern="[A-z1-9]{8,}"
+				/>
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/6/68/Eye_open_font_awesome.svg"
+					alt=""
+				/>
+			</div>
+
+			<a href="">Forgot Password?</a>
+			<button tpye="submit" id="login">Login</button>
+		</form>
+		<script src="login.js"></script>
+	</body>
+</html>
