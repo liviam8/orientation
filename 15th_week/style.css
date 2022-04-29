@@ -1,0 +1,23 @@
+#header p{
+    text-transform: capitalize;
+}
+
+body > p{
+    text-transform: lowercase ;
+}
+
+body > p{
+    text-transform: none ;
+}
+
+a{
+    color: crimson;
+    text-decoration: none;
+    font-weight:bold;
+    
+}
+a:hover{
+    color:darkmagenta;
+    text-decoration: underline;
+    background-color: aqua;
+}

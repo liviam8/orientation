@@ -1,0 +1,9 @@
+p{
+    font-size:12px;
+    /*
+    letter-spacing:2px;
+    word-spacing:2px;
+    line-height: 24px;
+*/  
+    letter-spacing: 0.3em;
+}
