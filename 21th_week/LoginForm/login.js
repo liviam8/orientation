@@ -1,5 +1,5 @@
-const pwdVisibilityButton = document.querySelector('img');
-pwdVisibilityButton.addEventListener('click', (event) => {
+const showpassword = document.querySelector('img');
+showpassword.addEventListener('click', (event) => {
 	const pwdField = document.querySelector('#password');
 	if (pwdField.getAttribute('type') === 'password') {
 		pwdField.setAttribute('type', 'text');

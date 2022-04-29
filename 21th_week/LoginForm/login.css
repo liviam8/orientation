@@ -14,9 +14,9 @@ form {
 	width: 500px;
 	height: 300px;
 	text-transform: uppercase;
-	font-family: Arial;
+	font-family: Helvetica;
 	justify-content: space-around;
-	color: #333333;
+	color: #838080;
 	background-color: white;
 	padding: 50px;
 	border-radius: 4px;
@@ -46,7 +46,7 @@ img {
 }
 input:focus {
 	outline: none;
-	box-shadow: 0 0 0 1px green;
+	box-shadow: 0 0 0 1px rgb(6, 228, 6);
 }
 a {
 	color: inherit;
