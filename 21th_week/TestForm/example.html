@@ -31,22 +31,31 @@
         </div>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password">
-       
+        <select name="cat">
+            <option value="white">Fehér macska</option>
+            <option value="black">Fekete macska</option>
+            <option value="green">Zöld macska</option>
+        </select>
 
-        
-        <input type="radio" name="showpassword" id="maybe" value="maybe">
-        <label for="maybe">showpassword</label>
-        <img
-					src="https://upload.wikimedia.org/wikipedia/commons/6/68/Eye_open_font_awesome.svg"
-					alt=""
-				/>
+        Feliratkozol a hirlevelre?
+        <div>
+            <input type="radio" name="newsletter" id="yes" value="yes">
+            <label for="yes">Igen</label>
+        </div>
+        <div>
+            <input type="radio" name="newsletter" id="no" value="no">
+            <label for="no">Nem</label>
+        </div>
+        <input type="radio" name="newsletter" id="maybe" value="maybe">
+        <label for="maybe">Talán</label>
 
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
 
         <input type="submit" value="Login">
         <button type="submit">
             Login
         </button>
     </form>
-    <script src="example.js"></script>
+    <script src="example-1.js"></script>
 </body>
 </html>

@@ -2,8 +2,6 @@ const $username = document.querySelector('#username');
 const $usernameError = document.querySelector('.username.error');
 const $form = document.querySelector('form');
 
-
-
 console.log($username);
 console.dir($username);
 console.log($username.value);
@@ -29,6 +27,7 @@ $form.addEventListener('submit', (event) => {
         console.log('hiba tortent')
     } else {
         console.log('submit happened');
-    } 
-});
+    }
 
+
+});
