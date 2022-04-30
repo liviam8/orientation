@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to our newsletter</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="/overtherainbow" method="POST">
+        <div>
+            <label for="username">Full name:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="name"
+                autofocus
+                required
+                pattern="[A-z]+"
+                value=""
+            >
+            <p class="error hidden username">Legalább 3 karaktert adj meg!</p>
+        </div>
+        <div>
+            <label for="email-input">E-mail:</label>
+            <input
+              id="email-input"
+              type="email"
+              name="email"
+              required>
+          </div>
+        
+
+        
+
+        <input type="submit" value="Login">
+
+       
+    </form>
+    <script src="example.js"></script>
+</body>
+</html>
