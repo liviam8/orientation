@@ -11,12 +11,12 @@ const usernameRegex = /[A-z]+/;
 $username.addEventListener('keyup', (event) => {
     // usernameRegex.test(event.target.value);
     if (!event.target.value.match(usernameRegex)) {
-        console.log('rossz az input');
-    } else if (event.target.value.length < 3) {
-        console.log('keves karakter');
+        console.log('wrong input');
+    } else if (event.target.value.length < 5) {
+        console.log('You should provide at least 5 characters');
         $usernameError.classList.remove('hidden');
     } else {
-        console.log('minden kiraly');
+        console.log('All right');
         $usernameError.classList.add('hidden');
     }
 });
@@ -24,9 +24,9 @@ $username.addEventListener('keyup', (event) => {
 $form.addEventListener('submit', (event) => {
     event.preventDefault();
     if ($username.value.length < 3) {
-        console.log('hiba tortent')
+        console.log('Something went wrong')
     } else {
-        console.log('submit happened');
+        console.log('Subscription happened');
     }
 
 
