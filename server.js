@@ -115,10 +115,7 @@ app.post('/posts', (req, res) => {
 
 
 
-app.use('/api/*', (req, res) => {
-   // Return 404 errors for the REST API in JSON format
-   res.status(404).send({ message: 'Not found' });
-});
+
 
 app.listen(port, () =>
     console.log(`Server running at http://localhost:${port}`));
