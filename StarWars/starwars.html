@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapi</title>
+    
+</head>
+<body>
+    <form action="/overtherainbow" method="POST">
+        <div class="container">
+
+
+        <label for="character">Enter Character name:</label>
+            <input
+                type="text"
+                id="character"
+                name="character"
+                placeholder="character"
+                autofocus
+                required
+                pattern="[A-z]+"
+                value=""
+            >
+        </div>
+        
+
+
+  
+        <tr>
+            <th scope="col"></th>
+
+            <th scope="col">Name</th>
+            
+           
+
+
+          </tr>
+        </thead>
+        <tbody id="name-rows">
+        </tbody>
+
+        
+
+        <input type="search" value="search">
+
+       
+    </form>
+    <script src="starwars.js"></script>
+</body>
+</html>
