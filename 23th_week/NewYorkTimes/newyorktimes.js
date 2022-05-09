@@ -9,7 +9,7 @@ const button = document.querySelector('button');
 
 
 
-button.addEventListener ('click', async  () => {
+button.addEventListener  ('click', async  () => {
     container.innerHTML="";
     searchTerm = document.getElementById("myInput").value;
 
