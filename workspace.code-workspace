@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "orientation2",
+			"path": "orientation2"
+		},
+		{
+			"name": "orientation2-1",
+			"path": "..\\orientation2-1"
+		}
+	],
+	"settings": {}
+}

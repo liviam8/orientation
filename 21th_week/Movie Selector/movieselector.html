@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Movie Selector</title>
+	</head>
+	<body>
+		<form action="/overtherainhow" method="POST">
+			<legend>Movie Selector</legend>
+			<select name="genre" id="genre">
+				<option disabled selected value> -- select an option -- </option>
+				<option value="Sci-fi">Sci-fi</option>
+				<option value="Drama">Drama</option>
+				<option value="Comedy">Comedy</option>
+			</select>
+			<select name="movie" id="movie">
+				<option disabled selected value> -- select an option -- </option>
+				<option hidden class="Sci-fi" value="Moon">Moon</option>
+				<option hidden class="Sci-fi" value="2001: A Space Odyssey">2001: A Space Odyssey</option>
+				<option hidden class="Sci-fi" value="Contact">Contact</option>
+				<option hidden class="Drama" value="Darkest Hour">Darkest Hour</option>
+				<option hidden class="Drama" value="There Will Be Blood">There Will Be Blood</option>
+				<option hidden class="Drama" value="American Beauty">American Beauty</option>
+				<option hidden class="Comedy" value="Airplane!">Airplane!</option>
+				<option hidden class="Comedy" value="Deadpool">Deadpool</option>
+				<option hidden class="Comedy" value="Wayne's World">Wayne's World</option>
+			</select>
+			<div id="selectedmovie"></div>
+		</form>
+	</body>
+	<script src="movieselector.js"></script>
+</html>

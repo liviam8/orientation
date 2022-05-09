@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Button Disable</title>
+	</head>
+	<body>
+		<form action="/overtherainbow" method="POST">
+			<legend>What is your favourite pet?</legend>
+		
+			<input	type="radio" name="favpet" id="favpetcat" value="cat" />
+			<label for ="favpetcat">cat</label>
+			<input	type="radio" name="favpet" id="favpetdog" value="dog" />
+			<label for ="favpetdog">dog</label>
+			<input	type="radio" name="favpet" id="favpetfish" value="fish" />
+			<label for ="favpetfish">Viktor the goldfish</label>
+
+			<legend>Do you want to sign up for cat facts?</legend>
+			<input type="radio" name="catfacts" id="catfactsyes" value="yes" />
+			<label for="catfactsyes">Yes</label>
+			<input type="radio" name="catfacts" id="catfactsno" value="no" />
+			<label for="catfactsno">No</label>
+			<div id="buttons"></div>
+			<button type="submit" id="cat" disabled>I love cats</button>
+			<button type="submit" id="signup" disabled="disabled">Sign up</button>
+		</form>
+	</body>
+	<script src="buttondisabled.js"></script>
+</html>

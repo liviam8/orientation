@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="login.css" />
+	</head>
+	<body>
+		<form action="/overtherainbow" method="POST">
+			<legend>Account Login</legend>
+			<label for="username">Username</label>
+			<input
+				type="text"
+				id="username"
+				name="username"
+				autofocus
+				required
+				pattern="[A-z1-9]{8,}"
+			/>
+			<label for="password">Password</label>
+			<div>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					required
+					pattern="[A-z1-9]{8,}"
+				/>
+				<img
+					src="https://icon-library.com/images/show-password-icon/show-password-icon-18.jpg"
+					alt=""
+				/>
+			</div>
+
+			<a href="">Forgot Password?</a>
+			<button tpye="submit" id="login">Login</button>
+		</form>
+		<script src="login.js"></script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to our newsletter</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="/subscribe" method="POST">
+        <div>
+            <label for="username">Full name:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="name"
+                autofocus
+                required
+                pattern="[A-z]+"
+                value=""
+            >
+            <p class="error hidden username">You should provide at least 5 characters</p>
+        </div>
+        <div>
+            <label for="email-input">E-mail address</label>
+            <input
+              id="email-input"
+              type="email"
+              name="email"
+              placeholder="email"
+              required>
+          </div>
+        
+
+        
+
+        <input type="submit" value="Sign up!">
+
+       
+    </form>
+    <script src="Newsletter.js"></script>
+</body>
+</html>
