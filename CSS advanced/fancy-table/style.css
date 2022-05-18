@@ -1,0 +1,46 @@
+html {
+	height: 100%;
+}
+body {
+	background-color: blue;
+}
+table {
+	border-collapse: collapse;
+	font-family: 'Montserrat', sans-serif;
+}
+th {
+	width: 210px;
+	padding: 10px;
+	background-color: rgb(22, 22, 22);
+	color: darkgray;
+	border-bottom: 3px solid darkgray;
+	text-align: start;
+}
+th:first-child {
+	border-top-left-radius: 2px;
+	border-right: 1px solid darkgray;
+}
+th:last-child {
+	border-top-right-radius: 2px;
+	border-left: 1px solid darkgray;
+}
+
+td {
+	width: 210px;
+	padding: 10px;
+	background-color: lightgray;
+	color: rgb(22, 22, 22);
+	border-top: 1px solid darkgray;
+}
+td:first-child {
+	border-right: 1px solid darkgray;
+}
+.row:nth-child(2n) td {
+	background-color: rgb(223, 222, 222);
+}
+.row:last-child td:first-child {
+	border-bottom-left-radius: 2px;
+}
+.row:last-child td:last-child {
+	border-bottom-right-radius: 2px;
+}

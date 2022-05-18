@@ -1,16 +1,70 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-01"
 		},
 		{
-			"name": "orientation2",
-			"path": "orientation2"
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-02"
 		},
 		{
-			"name": "orientation2-1",
-			"path": "..\\orientation2-1"
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-03"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-04"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-05"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-06"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-07"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-08"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-09"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-10"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-11"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-12"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-13"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-15"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-16"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-17"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-18"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-19"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-20"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-21"
+		},
+		{
+			"path": "..\\lassie-syllabus-1\\MaterialReview\\week-22"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "week-21"
+	}
 }
