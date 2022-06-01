@@ -1,0 +1,23 @@
+body {
+	display: grid;
+	grid-template-columns: 200px 400px 200px;
+	height: 200px;
+	margin: 0px;
+}
+.pink {
+	background-color: hotpink;
+}
+.yellow {
+	background-color: #fdd132;
+}
+.green {
+	background-color: #57d121;
+}
+@media screen and (max-width: 799px) {
+	body {
+		grid-template-columns: none;
+		grid-template-rows: 200px 200px 200px;
+
+		margin: 0px;
+	}
+}

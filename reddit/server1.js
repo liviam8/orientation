@@ -1,23 +1,20 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 const port = 3000;
 const app = express();
 
-const pool = mysql.createConnection({
-  host: 'localhost',
+app.use(express.json());
+
+const conn = mysql.createConnection({
+  host: '0.0.0.0',
   user: 'root',
   password: 'abc123',
   database: 'reddit',
-  debug: true,
 });
 
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World!')
-//   })
-
-pool.connect((err) => {
+conn.connect((err) => {
     if (err) {
         console.error(err);
     } else {
@@ -25,63 +22,30 @@ pool.connect((err) => {
     }
 });
 
-// Serve files from the 'public' folder
-app.use(express.static('public'));
+const defaultScore = 0;
 
-// Convert JSON bodies to JavaScript objects
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    // Load index.html from the public folder
-    res.redirect('/index.html');
-});
-
-app.get('/api/reddit', (req, res) => {
-   const query = `
-   SELECT * FROM reddit.reddit
-     `;
-
-     pool.query(query, (err, rows) => {
-         if (err) {
-             console.error(err);
-             res.status(500).send({ message: err.sqlMessage });
-             return;
-         }
-         res.send({ reddit: rows });
-     });
- });
-
-
-
-app.get('/api/reddit/:id', (req, res) => {
-    const query1 = `
-    select title from reddit 
-    WHERE id= ?   
-    `;
-    const params = [req.params.id];
-    
-
-    pool.query(query1, params, (err1, rows) => {
-        if (err1) {
-            console.error(err1);
-            res.status(500).send({ message: err1.sqlMessage });
-            return;
-        }
-        if (rows.length === 0) {
-            res.status(404).send({ message: 'Not found' });
-            return;
-        }
-        res.send({ reddit: rows });
-    });
-});
-
+app.get('/api/posts', (req, res) => {
+    const query = `
+    SELECT * FROM reddit.posts;
+      `;
+ 
+      pool.query(query, (err, rows) => {
+          if (err) {
+              console.error(err);
+              res.status(500).send({ message: err.sqlMessage });
+              return;
+          }
+          res.send({ posts: rows });
+      });
+  });
+ 
 
 
 app.post('/posts', (req, res) => {
     const data = {
         title: req.body.title,
         url: req.body.url,
-        timestamp: Date.now,
+        owner: req.body.owner,
     };
 
     // Validation
@@ -93,13 +57,21 @@ app.post('/posts', (req, res) => {
         res.status(400).send({ message: 'missing or invalid URL' });
         return;
     }
+    if (!data.owner) {
+        res.status(400).send({ message: 'missing owner' });
+        return;
+    }
 
-    const query = `INSERT INTO reddit (title, url, timestamp) VALUES (?, ?, ?)`;
-    const params = [data.title, data.url, data.timestamp];
-        
-    pool.query(query, params, (error, result) => {
+    const query = `
+        INSERT INTO posts (title, url, owner, timestamp)
+        VALUES (?, ?, ?, ?)
+    `;
+    const params = [data.title, data.url, data.owner, data.timestamp];
+
+    conn.query(query, params, (error, result) => {
         if (error) {
-            res.status(500).send({ message: 'DB error - ' + data.timestamp});
+            console.error(error);
+            res.status(500).send({ message: 'DB error' });
             return;
         }
         res.status(201).send({
@@ -108,10 +80,7 @@ app.post('/posts', (req, res) => {
             ...data
         });
     });
-   
 });
-
-
 
 function vote(req, res, operator) {
     const id = Number(req.params.id);
@@ -211,12 +180,6 @@ app.delete('/posts/:id', (req, res) => {
     });
 });
 
-
-
-app.use('/api/*', (req, res) => {
-   // Return 404 errors for the REST API in JSON format
-   res.status(404).send({ message: 'Not found' });
-});
-
 app.listen(port, () =>
-    console.log(`Server running at http://localhost:${port}`));
+    console.log(`Server running at http://localhost:${port}`)
+);

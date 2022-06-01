@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 const port = 3000;
 const app = express();
@@ -13,9 +13,9 @@ const pool = mysql.createConnection({
 });
 
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World!')
-//   })
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
 
 pool.connect((err) => {
     if (err) {
@@ -31,10 +31,10 @@ app.use(express.static('public'));
 // Convert JSON bodies to JavaScript objects
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    // Load index.html from the public folder
-    res.redirect('/index.html');
-});
+// app.get('/', (req, res) => {
+//     // Load index.html from the public folder
+//     res.redirect('/index.html');
+// });
 
 app.get('/api/reddit', (req, res) => {
    const query = `
@@ -81,7 +81,7 @@ app.post('/posts', (req, res) => {
     const data = {
         title: req.body.title,
         url: req.body.url,
-        timestamp: Date.now,
+        timestamp: new Date(),
     };
 
     // Validation
@@ -96,21 +96,42 @@ app.post('/posts', (req, res) => {
 
     const query = `INSERT INTO reddit (title, url, timestamp) VALUES (?, ?, ?)`;
     const params = [data.title, data.url, data.timestamp];
-        
+
     pool.query(query, params, (error, result) => {
         if (error) {
-            res.status(500).send({ message: 'DB error - ' + data.timestamp});
+            res.status(500).send({ message: 'DB error' });
             return;
         }
         res.status(201).send({
             id: result.insertId,
-            score: defaultScore,
+            score: 0,
             ...data
         });
     });
-   
 });
 
+app.delete("/posts/:id",(req,res)=> {
+
+    
+    const query1 = `
+    DELETE FROM reddit WHERE id= ?   
+    `;
+    const params = [req.params.id];
+    
+
+    pool.query(query1, params, (err1) => {
+        if (err1) {
+            console.error(err1);
+            res.status(500).send({ message: err1.sqlMessage });
+            return;
+        }
+       
+        res.status(200).send({message: 'done'})
+    });
+
+
+
+})
 
 
 function vote(req, res, operator) {
@@ -121,11 +142,11 @@ function vote(req, res, operator) {
     }
 
     const updateQuery = `
-        UPDATE posts SET score = score ${operator} 1 WHERE id = ?
+        UPDATE reddit SET score = score ${operator} 1 WHERE id = ?
     `;
     const params = [id];
 
-    conn.query(updateQuery, params, (updateErr, updateResult) => {
+    pool.query(updateQuery, params, (updateErr, updateResult) => {
         if (updateErr) {
             console.error(updateErr);
             res.status(500).send({ message: 'DB error' });
@@ -138,9 +159,9 @@ function vote(req, res, operator) {
             return;
         }
 
-        const selectQuery = `SELECT * FROM posts WHERE id = ?`;
+        const selectQuery = `SELECT * FROM reddit WHERE id = ?`;
 
-        conn.query(selectQuery, params, (selectErr, rows) => {
+        pool.query(selectQuery, params, (selectErr, rows) => {
             if (selectErr) {
                 console.error(selectErr);
                 res.status(500).send({ message: 'DB error' });
@@ -161,55 +182,7 @@ function vote(req, res, operator) {
 app.put('/posts/:id/upvote', (req, res) => vote(req, res, '+'));
 app.put('/posts/:id/downvote', (req, res) => vote(req, res, '-'));
 
-app.delete('/posts/:id', (req, res) => {
-    const id = Number(req.params.id);
-    if (isNaN(id)) {
-        res.status(400).send({ message: 'invalid ID' });
-        return;
-    }
 
-    const username = req.headers.username;
-    if (!username) {
-        res.status(401).send({ message: 'Unauthorized' });
-        return;
-    }
-
-    const selectQuery = `SELECT * FROM posts WHERE id = ?`;
-    const params = [id];
-
-    conn.query(selectQuery, params, (selectErr, rows) => {
-        if (selectErr) {
-            console.error(selectErr);
-            res.status(500).send({ message: 'DB error' });
-            return;
-        }
-
-        if (rows.length === 0) {
-            res.status(404).send({ message: 'Not found' });
-            return;
-        }
-
-        const owner = rows[0].owner;
-
-        if (username !== owner) {
-            res.status(401).send({ message: 'Unauthorized' });
-            return;
-        }
-
-        const deleteQuery = `DELETE FROM posts WHERE id = ?`;
-        conn.query(deleteQuery, params, (deleteErr) => {
-            if (deleteErr) {
-                console.error(deleteErr);
-                res.status(500).send({ message: 'DB error' });
-                return;
-            }
-
-            // The usual response for a DELETE request is
-            // 204 No Content with empty response body
-            res.status(204).send();
-        });
-    });
-});
 
 
 

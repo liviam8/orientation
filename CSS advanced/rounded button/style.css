@@ -1,0 +1,65 @@
+html {
+	height: 100%;
+}
+body {
+	background-color: #2f305f;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 150px 40px 150px 40px 150px 1fr;
+	grid-template-rows: 1fr 50px 40px 50px 1fr;
+}
+button {
+	width: 150px;
+	height: 50px;
+	border: none;
+	border-radius: 4px;
+	opacity: 0.9;
+}
+.blue {
+	background-color: #4463a2;
+	color: #b0c3ee;
+	box-shadow: 0px 5px 0px #27396d;
+	grid-column: 2;
+	grid-row: 2;
+}
+.green {
+	background-color: #16a04e;
+	color: #94ecb8;
+	box-shadow: 0px 5px 0px #176a40;
+	grid-column: 4;
+	grid-row: 2;
+}
+.red {
+	background-color: #d34232;
+	color: #f29288;
+	box-shadow: 0px 5px 0px #862c30;
+	grid-column: 6;
+	grid-row: 2;
+}
+.light {
+	background-color: #01a9ec;
+	color: #b7e5fa;
+	box-shadow: 0px 5px 0px #0c6a9f;
+	grid-column: 2;
+	grid-row: 4;
+}
+.black {
+	background-color: #27272b;
+	color: #9d9d9e;
+	box-shadow: 0px 5px 0px #1f1f2f;
+	grid-column: 4;
+	grid-row: 4;
+}
+.white {
+	background-color: #e0e6f4;
+	color: #857e95;
+	box-shadow: 0px 5px 0px #999fb3;
+	grid-column: 6;
+	grid-row: 4;
+}
+button:hover {
+    filter: brightness(110%);
+}
+button:focus {
+    filter: brightness(150%);
+}

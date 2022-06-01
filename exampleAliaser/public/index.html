@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL aliaser</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="/api/links" method="POST">
+        <div>
+            <label for="URL">URL:</label>
+            <input
+                type="text"
+                id="URL"
+                name="URL"
+
+                autofocus
+                required
+                value=""
+            >
+ <!-- //<p class="error hidden username">You should provide at least 5 characters</p> -->
+        </div>
+        <div>
+            <label for="alias">Alias</label>
+            <input
+              id="alias"
+              type="text"
+              name="alias"
+              required
+              pattern="[A-z]+"
+              value=""
+            >
+          </div>
+        
+
+        
+
+        <input type="submit" value="Submit">
+
+       
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+html {
+	height: 100%;
+}
+body {
+	background-color: #313841;
+	height: 150px;
+	display: grid;
+	grid-template-rows: 40px 40px 40px 1fr;
+	grid-template-columns: 40px 1fr;
+	row-gap: 20px;
+}
+button {
+	background-color: #1d242b;
+	color: white;
+	border: none;
+	height: 40px;
+	width: 40px;
+	font-size: 25px;
+	position: relative;
+}
+.delete {
+	visibility: hidden;
+	color: #b13b3a;
+	grid-row: 2;
+}
+.confirm {
+	visibility: hidden;
+	color: #339c6d;
+	grid-row: 3;
+}
+.delete:before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 16px;
+	left: 40px;
+	z-index: 2;
+	border-style: solid;
+	border-width: 4px 0 4px 4px;
+	border-color: transparent transparent transparent #1d242b;
+}
+.confirm:before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 16px;
+	left: 40px;
+	z-index: 2;
+	border-style: solid;
+	border-width: 4px 0 4px 4px;
+	border-color: transparent transparent transparent #1d242b;
+}
+.delete::after {
+	height: 40px;
+	width: 150px;
+	text-align: center;
+	content: 'Delete';
+	position: absolute;
+	top: 0px;
+	left: 40px;
+	background-color: #f34441;
+	color: white;
+}
+
+.confirm::after {
+	height: 40px;
+	width: 150px;
+	position: absolute;
+	top: 0px;
+	left: 40px;
+	text-align: center;
+	content: 'Sure?';
+	background-color: #38ba7d;
+	color: white;
+}
+
+.constant:hover + .delete {
+	visibility: visible;
+}
+.constant:hover + .delete + .confirm {
+	visibility: visible;
+}
+.constant:focus + .delete {
+	visibility: visible;
+}
+.constant:focus + .delete + .confirm {
+	visibility: visible;
+}
