@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Fox Dating</title>
+    <!-- <style>
+        .error {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style> -->
+</head>
+<body>
+    <form >
+        <div>
+            <label for="username">My Username:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="username"
+                autofocus
+                required
+                pattern="[A-z]+"
+                value=""
+            >
+            <!-- <p class="error hidden username">Legalább 3 karaktert adj meg!</p> -->
+        </div>
+        <div>
+            <label for="nickname">My Nickname:</label>
+            <input
+                type="text"
+                id="nickname"
+                name="nickname"
+                placeholder="nickname"
+                autofocus
+                required
+                pattern="[A-z]+"
+                value=""
+            >
+            <!-- <p class="error hidden username">Legalább 3 karaktert adj meg!</p> -->
+        </div>
+
+        <div>
+            <label for="iam">I am a:</label>
+
+            <input type="radio" name="iam" id="iamman" value="1">
+            <label for="man">Man</label>
+       
+            <input type="radio" name="iam" id="iamwoman" value="2">
+            <label for="woman">Woman</label>
+        </div>
+
+        <div>
+            <label for="lookingfor">Looking for:</label>
+
+            <input type="radio" name="looking4" id="looking4man" value="1">
+            <label for="man">Man</label>
+       
+            <input type="radio" name="looking4" id="looking4woman" value="2">
+            <label for="woman">Woman</label>
+
+            <input type="radio" name="looking4" id="looking4both" value="3">
+            <label for="both">Both</label>
+        </div>
+
+
+       
+        <select id = "year" name="year">
+            <option value="1960">1960</option>
+            <option value="1970">1970</option>
+            <option value="1980">1980</option>
+            <option value="1990">1990</option>
+            <option value="2000">2000</option>
+            <option value="2010">2010</option>
+        </select>
+
+        <div>
+            <label for="username">My profile picture:</label>
+            <input
+                type="url"
+                id="url"
+                name="url"
+                placeholder="url"
+                autofocus
+                required
+                value=""
+            >
+        </div>
+
+        <label for="aboutme">About me:</label>
+        <textarea name="aboutme" id="aboutme" cols="30" rows="10"></textarea>
+
+        <button type="submit">Submit</button>
+
+        
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
